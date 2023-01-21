@@ -1,0 +1,51 @@
+<app-navber></app-navber>
+<div class="row m-3">
+  <div class="col-6">
+    <div class="card">
+      <h5 class="card-header">Total Cars Parked</h5>
+      <div class="card-body">
+        <h5 class="card-title">{{totalCarPark}}</h5>
+        <p class="card-text">check the full list to understand the details about car parking today</p>
+        <a class="btn btn-primary"  (click)="goToList()">See Full list</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <h5 class="card-header">Total Empty Solt</h5>
+      <div class="card-body">
+        <h5 class="card-title">{{totalEmptySolt}}</h5>
+        <p class="card-text">Go to sell full list and edit empty solt of car parking</p>
+        <a  class="btn btn-primary" (click)="goToList()">See Full List</a>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Serial No</th>
+        <th scope="col">Owner Name</th>
+        <th scope="col">Vehicle Type</th>
+        <th scope="col">License No</th>
+        <th scope="col">Entry Time</th>
+        <th scope="col">Exit Time</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let park of parkInfo">
+        <td>{{park.serialNo}}</td>
+        <td>{{park.ownerName}}</td>
+        <td>{{park.vehicleType}}</td>
+        <td>{{park.licenseNo}}</td>
+        <td>{{park.entryTime}}</td>
+        <td>{{park.exitTime}}</td>
+        <td>{{park.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

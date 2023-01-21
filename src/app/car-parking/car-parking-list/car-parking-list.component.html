@@ -1,0 +1,34 @@
+<app-navber></app-navber>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Serial No</th>
+        <th scope="col">Owner Name</th>
+        <th scope="col">Vehicle Type</th>
+        <th scope="col">License No</th>
+        <th scope="col">Entry Time</th>
+        <th scope="col">Exit Time</th>
+        <th scope="col">Status</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let park of parkInfo">
+        <td>{{park.serialNo}}</td>
+        <td>{{park.ownerName}}</td>
+        <td>{{park.vehicleType}}</td>
+        <td>{{park.licenseNo}}</td>
+        <td>{{park.entryTime}}</td>
+        <td>{{park.exitTime}}</td>
+        <td>{{park.status}}</td>
+        <td>
+          <span *ngIf="park.editable">
+            <img title="Edit" src="https://img.icons8.com/ios/24/000000/edit-property.png" (click)="goToEdit()" />
+            
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
